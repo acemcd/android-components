@@ -4,15 +4,62 @@ title: Changelog
 permalink: /changelog/
 ---
 
-# 98.0.0 (In Development)
-* [Commits](https://github.com/mozilla-mobile/android-components/compare/v97.0.0...main)
-* [Milestone](https://github.com/mozilla-mobile/android-components/milestone/145?closed=1)
+# 99.0.0 (In Development)
+* [Commits](https://github.com/mozilla-mobile/android-components/compare/v98.0.0...main)
+* [Milestone](https://github.com/mozilla-mobile/android-components/milestone/146?closed=1)
 * [Dependencies](https://github.com/mozilla-mobile/android-components/blob/main/buildSrc/src/main/java/Dependencies.kt)
 * [Gecko](https://github.com/mozilla-mobile/android-components/blob/main/buildSrc/src/main/java/Gecko.kt)
 * [Configuration](https://github.com/mozilla-mobile/android-components/blob/main/.config.yml)
 
-* **lib/publicsuffixlist**
+# 98.0.0
+* [Commits](https://github.com/mozilla-mobile/android-components/compare/v97.0.0...v98.0.0)
+* [Milestone](https://github.com/mozilla-mobile/android-components/milestone/145?closed=1)
+* [Dependencies](https://github.com/mozilla-mobile/android-components/v98.0.0/main/buildSrc/src/main/java/Dependencies.kt)
+* [Gecko](https://github.com/mozilla-mobile/android-components/v98.0.0/main/buildSrc/src/main/java/Gecko.kt)
+* [Configuration](https://github.com/mozilla-mobile/android-components/v98.0.0/main/.config.yml)
+
+* **support-utils**
+  * 🌟️️ **Add a `PendingUtils.defaultFlags` property to ease setting PendingIntent mutability as required for Android 31+.
+
+* **feature-prompts**:
+  * More prompts are dismissable.
+  * ⚠️ **This is a breaking change**: Success / dismiss callbacks are now consistently ordered.
+
+* **feature-search**
+  * Adds the `extraAdServersRegexps` of Baidu to help sending the baidu search telemetry of ads. [#11582](https://github.com/mozilla-mobile/android-components/pull/11582)
+
+* **browser-toolbar**
+  * 🚒 Bug fixed [issue #11499](https://github.com/mozilla-mobile/android-components/issues/11499) - Update tracking protection icon state even when is not displayed
+
+* **browser-toolbar**
+  * 🚒 Bug fixed [issue #11545](https://github.com/mozilla-mobile/android-components/issues/11545) - `clearColorFilter` doesn't work on Api 21, 22, so the default white filter remains set.Use `clearColorFilter` only when the version of API is bigger than 22
+
+* **support-ktx**
+  * 🚒 Bug fixed [issue #11527](https://github.com/mozilla-mobile/android-components/issues/11527) - Fix some situations in which the immersive mode wasn't properly applied.
+
+* **lib-crash**
+  * 🚒 Bug fixed [issue #11627](https://github.com/mozilla-mobile/android-components/issues/11627) - Firefox crash notification is not displayed on devices with Android 11/Android 12
+
+* **lib-publicsuffixlist**
   * ⚠️ **This is a breaking change**: Removed `String.urlToTrimmedHost` extension method.
+
+* **feature-top-sites**
+  * ⚠️ **This is a breaking change**: The existing data class `TopSite` has been converted into a sealed class. [#11483](https://github.com/mozilla-mobile/android-components/issues/11483)
+  * Extend `DefaultTopSitesStorage` to accept a `TopSitesProvider` for fetching top sites. [#11483](https://github.com/mozilla-mobile/android-components/issues/11483)
+  * ⚠️ **This is a breaking change**: Added a new parameter `fetchProvidedTopSites` to `TopSitesConfig` to specify whether or not to fetch top sites from the `TopSitesProvider`. [#11605](https://github.com/mozilla-mobile/android-components/issues/11605)
+
+* **concept-storage**
+  * ⚠️ **This is a breaking change**: Adds a new `isRemote` property in `VisitInfo` which distinguishes visits made on the device and those that come from Sync.
+
+* **service-contile**
+  * Adds a `ContileTopSitesProvider` that implements `TopSitesProvider` for returning top sites from the Contile services API. [#11483](https://github.com/mozilla-mobile/android-components/issues/11483)
+
+* **service-glean**
+  * 🆙 Updated Glean to version 43.0.2 ([changelog](https://github.com/mozilla/glean/releases/tag/v43.0.2))
+    * Includes new `build_date` metric
+
+* **lib-push-amazon**
+  * ❌ **This is a breaking change**: This component is now removed since we no longer support it.
 
 # 97.0.0
 * [Commits](https://github.com/mozilla-mobile/android-components/compare/v96.0.0...v97.0.0)

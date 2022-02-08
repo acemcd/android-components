@@ -1,6 +1,6 @@
 # Please keep this version in sync with version.txt
 # version.txt should be the new source of truth for version numbers
-componentsVersion: 98.0.0
+componentsVersion: 99.0.0
 # Please add a treeherder group in taskcluster/ci/config.yml if you add a new project here.
 projects:
   compose-awesomebar:
@@ -303,6 +303,10 @@ projects:
     path: components/service/pocket
     description: 'A library to communicate with the Pocket API'
     publish: true
+  service-contile:
+    path: components/service/contile
+    description: 'A library to communicate with the Contile services API'
+    publish: true
   support-base:
     path: components/support/base
     description: 'Base component containing building blocks for components.'
@@ -386,10 +390,6 @@ projects:
   lib-publicsuffixlist:
     path: components/lib/publicsuffixlist
     description: 'A library for reading and using the public suffix list.'
-    publish: true
-  lib-push-amazon:
-    path: components/lib/push-amazon
-    description: 'An implementation of concept-push for the Amazon Device Messaging.'
     publish: true
   lib-push-firebase:
     path: components/lib/push-firebase
